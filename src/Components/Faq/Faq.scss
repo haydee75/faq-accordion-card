@@ -1,0 +1,206 @@
+.FaqContainer {
+  width: 100%;
+  min-height: 768px;
+  background: linear-gradient(180deg, #b068e9 0%, #6463e7 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 920px) {
+    padding: 125px 0;
+    min-height: auto;
+  }
+
+  .Row {
+    max-width: 920px;
+    width: 100%;
+    min-height: 509px;
+    background: #fff;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
+    border-radius: 23px;
+
+    @media screen and (max-width: 920px) {
+      flex-direction: column;
+      align-items: center;
+      margin: 0 24px;
+
+      &::after {
+        position: absolute;
+        content: "";
+        background: url("./images/illustration-woman-online-mobile.svg");
+        width: 100%;
+        height: 25%;
+        background-repeat: no-repeat;
+        top: 20px;
+        right: 25px;
+        background-position-x: center;
+        background-size: auto;
+      }
+
+      &::before {
+        position: absolute;
+        content: "";
+        background: url("./images/bg-pattern-mobile.svg");
+        width: 100%;
+        height: 20%;
+        background-repeat: no-repeat;
+        top: 125px;
+        right: 5px;
+        background-position-x: center;
+        background-size: auto;
+      }
+    }
+
+    .Column {
+      width: 50%;
+
+      @media screen and (max-width: 920px) {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &.Img {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        position: relative;
+
+        @media screen and (max-width: 920px) {
+          justify-content: center;
+          height: 70px;
+          width: 100%;
+        }
+
+        .Img {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          width: 84%;
+          height: 100%;
+          background: url("./images/bg-pattern-desktop.svg");
+          background-position-x: right;
+          background-size: auto;
+          background-position-y: center;
+
+          @media screen and (max-width: 920px) {
+            display: none;
+          }
+
+          &::before {
+            content: url("./images/illustration-woman-online-desktop.svg");
+            height: 359px;
+            width: 472px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            right: 15px;
+
+            @media screen and (max-width: 920px) {
+              display: none;
+            }
+          }
+
+          &::after {
+            content: url("./images/illustration-box-desktop.svg");
+            height: 359px;
+            width: 472px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            right: 15px;
+            margin-top: 110px;
+
+            @media screen and (max-width: 920px) {
+              display: none;
+            }
+          }
+        }
+      }
+
+      &.Content {
+        padding: 65px 0;
+
+        .QuestionAnswer {
+          border-bottom: 1px solid #e8e8ea;
+          max-width: 350px;
+          width: 100%;
+
+          @media screen and (max-width: 920px) {
+            max-width: 100%;
+          }
+
+          .Question {
+            cursor: pointer;
+            padding: 19px 0;
+            display: flex;
+            justify-content: space-between;
+
+            &::after {
+              transition: transform 0.5s ease;
+            }
+
+            > span {
+              transition: color 0.5s ease;
+
+              @media screen and (max-width: 920px) {
+                font-size: 13px;
+              }
+            }
+
+            &:hover {
+              > span {
+                color: #f47b56;
+              }
+            }
+
+            &.active {
+              &::after {
+                content: url("./images/icon-arrow-down.svg");
+              }
+            }
+
+            &.hidden {
+              > span {
+                font-weight: 700;
+              }
+
+              &::after {
+                content: url("./images/icon-arrow-down.svg");
+                transform: rotate(180deg);
+              }
+            }
+          }
+
+          .Answer {
+            max-width: 319px;
+            transition: max-height 0.5s ease;
+            overflow: hidden;
+
+            > span {
+              font-size: 12px;
+              line-height: 18px;
+              color: #787887;
+              padding-bottom: 19px;
+              display: block;
+            }
+
+            &.active {
+              max-height: 100px;
+            }
+
+            &.hidden {
+              max-height: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
